@@ -1,0 +1,22 @@
+h1.sectionTitle {
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-size: 18px;
+  border-left: 5px solid var(--primary-border);
+  padding-left: 16px;
+}
+
+.section {
+  padding: 0 16px;
+  margin-bottom: 16px;
+}
+
+.section-items {
+  display: flex;
+  gap: 16px;
+}
+
+.sectionTitle {
+  margin-bottom: 16px;
+}
