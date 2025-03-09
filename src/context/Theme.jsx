@@ -2,7 +2,9 @@ import React, { createContext, useEffect, useState } from "react";
 
 export const ThemeContext = createContext();
 const ThemeContextProvider = ({ children }) => {
-  const [theme, setTheme] = useState(null);
+  const [theme, setTheme] = useState(
+    global.localStorage.getItem("theme") || "light"
+  );
   useEffect(() => {
     let pastTheme = global.localStorage.getItem("theme");
     console.log(">>>>>", pastTheme);
