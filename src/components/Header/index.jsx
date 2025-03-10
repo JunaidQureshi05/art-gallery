@@ -4,6 +4,7 @@ import "./Header.css";
 import { signInWithGoogle } from "../../firebase/firebaseAuth";
 import { useDispatch, useSelector } from "react-redux";
 import { loginUser } from "../../store/reducers/authReducer";
+import UserProfile from "../UserProfile/UserProfile";
 
 const Header = () => {
   const dispatch = useDispatch();
@@ -22,26 +23,11 @@ const Header = () => {
         <li>
           <a href="#"> Contact</a>
         </li>
-        <li>
-          {userProfile ? (
-            <React.Fragment>
-              <img src={userProfile?.photoURL} />
-              <p>{userProfile?.displayName}</p>
-            </React.Fragment>
-          ) : (
-            <button
-              href="#"
-              onClick={async () => {
-                const result = await signInWithGoogle();
-                dispatch(loginUser(result));
-              }}
-            >
-              Sign In
-            </button>
-          )}
-        </li>
       </ul>
-      <Switch />
+      <div className="right">
+        <UserProfile />
+        <Switch />
+      </div>
     </nav>
   );
 };

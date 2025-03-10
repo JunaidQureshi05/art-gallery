@@ -16,9 +16,12 @@ const authSlice = createSlice({
         JSON.stringify(Object.assign({}, action?.payload) || {})
       );
     },
-    logoutUser: (state, action) => {},
+    logoutUser: (state, action) => {
+      state.user = null;
+      global?.window?.localStorage?.removeItem("user");
+    },
   },
 });
 
-export const { loginUser } = authSlice.actions;
+export const { loginUser, logoutUser } = authSlice.actions;
 export default authSlice;

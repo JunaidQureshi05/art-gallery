@@ -6,8 +6,10 @@
   box-sizing: border-box;
 }
 body {
+  margin: 0 20px;
   font-family: "Noto Sans", sans-serif;
   transition: all 1s ease;
+  background-size: cover;
 }
 
 body[data-theme="light"] {

@@ -1,0 +1,14 @@
+.videoSection {
+  height: 500px;
+  margin-bottom: 16px;
+
+  border: 1px solid var(--primary-border);
+}
+
+.videoSection video {
+  display: block;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  /* background-position: top; */
+}
