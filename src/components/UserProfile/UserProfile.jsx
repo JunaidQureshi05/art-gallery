@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import "./UserProfile.css";
 import { useDispatch, useSelector } from "react-redux";
 import { loginUser, logoutUser } from "../../store/reducers/authReducer";
 import { signInWithGoogle } from "../../firebase/firebaseAuth";
+import Alert from "../Alert/Alert";
 const UserProfile = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const profile = useSelector((state) => state?.auth?.user);
   const dispatch = useDispatch();
   return (
@@ -12,7 +14,7 @@ const UserProfile = () => {
         <div
           className="profile"
           onClick={() => {
-            dispatch(logoutUser());
+            setIsModalOpen(true);
           }}
         >
           <div className="imageContainer">
@@ -35,6 +37,17 @@ const UserProfile = () => {
           Sign In
         </button>
       )}
+      <Alert
+        message="Are you sure you want to logout ?"
+        isOpen={isModalOpen}
+        onConfirm={() => {
+          dispatch(logoutUser());
+          setIsModalOpen(false);
+        }}
+        onDeny={() => {
+          setIsModalOpen(false);
+        }}
+      />
     </div>
   );
 };
