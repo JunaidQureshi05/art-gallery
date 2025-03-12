@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Switch from "../Switch";
 import s from "./Header.module.scss";
 import { signInWithGoogle } from "../../firebase/firebaseAuth";
@@ -7,8 +7,19 @@ import { loginUser } from "../../store/reducers/authReducer";
 import UserProfile from "../UserProfile";
 
 const Header = () => {
+  const [scrolledPosition, setScrolledPosition] = useState(0);
+  function handleScroll(e) {
+    console.log("#####", window.scrollY);
+    setScrolledPosition(window.scrollY);
+  }
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return function () {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
   return (
-    <nav>
+    <nav className={scrolledPosition > 0 ? s.blurredBg : null}>
       <h1>Art Loom</h1>
       <div className={s.buttons}>
         <ul className={s.navigation}>

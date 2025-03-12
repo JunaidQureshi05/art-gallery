@@ -4,43 +4,40 @@ nav {
   display: flex;
   align-items: center;
   padding: 16px;
-  background-color: var(--body-background);
+  background-color: $body-background;
   position: fixed;
   z-index: 10;
   top: 0;
   left: 0;
   right: 0;
-}
-
-nav h1 {
-  margin-right: auto;
-  color: $primary-heading;
-  font-family: "Emblema One", system-ui;
-}
-
-nav .buttons {
-  margin-top: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-nav ul.navigation {
-  display: flex;
-  font-size: 14px;
-  text-transform: uppercase;
-  list-style-type: none;
-  align-items: center;
-  gap: 8px;
-}
-
-ul.navigation li a {
-  text-decoration: none;
-  color: var(--body-text);
-}
-
-.right {
-  margin-left: auto;
-  display: flex;
-  align-items: center;
-  gap: 32px;
+  transition: all 0.5s ease;
+  &.blurredBg {
+    background-color: $blurred-bg;
+  }
+  h1 {
+    margin-right: auto;
+    color: $primary-heading;
+    font-family: "Emblema One", system-ui;
+  }
+  .buttons {
+    margin-top: 0;
+    display: flex;
+    gap: 18px;
+    align-items: center;
+  }
+  ul.navigation {
+    display: flex;
+    font-size: 14px;
+    text-transform: uppercase;
+    list-style-type: none;
+    align-items: center;
+    gap: 8px;
+    li a {
+      text-decoration: none;
+      color: var(--body-text);
+      &:hover {
+        border-bottom: 1px solid $primary-border;
+      }
+    }
+  }
 }
