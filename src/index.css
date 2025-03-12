@@ -17,7 +17,7 @@ body[data-theme="light"] {
   --body-text: black;
   --primary-heading: black;
   --primary-border: #c4c4c4;
-  --primary-highlight: #ffd700;
+  --primary-highlight: #c8ac09;
 }
 body[data-theme="dark"] {
   --body-background: black;

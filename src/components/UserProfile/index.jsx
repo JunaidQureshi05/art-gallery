@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./UserProfile.css";
+import s from "./UserProfile.module.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { loginUser, logoutUser } from "../../store/reducers/authReducer";
 import { signInWithGoogle } from "../../firebase/firebaseAuth";
@@ -8,20 +8,21 @@ const UserProfile = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const profile = useSelector((state) => state?.auth?.user);
   const dispatch = useDispatch();
+  console.log("######PROFILE IS ", profile);
   return (
     <div>
       {profile ? (
         <div
-          className="profile"
+          className={s.profile}
           onClick={() => {
             setIsModalOpen(true);
           }}
         >
-          <div className="imageContainer">
-            <img src={profile?.photoURL} />
+          <div className={s.imageContainer}>
+            <img src={profile?.reloadUserInfo?.photoUrl} />
           </div>
 
-          <p className="name">{profile?.displayName?.split(" ")?.[0]}</p>
+          <p className={s.name}>{profile?.displayName?.split(" ")?.[0]}</p>
           <i class="fa-solid fa-arrow-right-from-bracket"></i>
         </div>
       ) : (
@@ -32,7 +33,7 @@ const UserProfile = () => {
             debugger;
             dispatch(loginUser(result));
           }}
-          className="signInButton"
+          className={s.signInButton}
         >
           Sign In
         </button>
