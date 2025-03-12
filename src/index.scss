@@ -1,3 +1,4 @@
+@import "scss/colors";
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
 
 * {
@@ -12,19 +13,20 @@ body {
   background-size: cover;
 }
 
-body[data-theme="light"] {
-  --body-background: white;
-  --body-text: black;
-  --primary-heading: black;
-  --primary-border: #c4c4c4;
-  --primary-highlight: #c8ac09;
+// Theme Mixin
+@mixin theme($theme) {
+  @each $key, $value in map-get($themes, $theme) {
+    --#{$key}: #{$value};
+  }
 }
+
+// Apply Themes
+body[data-theme="light"] {
+  @include theme(light);
+}
+
 body[data-theme="dark"] {
-  --body-background: black;
-  --body-text: white;
-  --primary-heading: white;
-  --primary-border: white;
-  --primary-highlight: #ffd700;
+  @include theme(dark);
 }
 
 body {

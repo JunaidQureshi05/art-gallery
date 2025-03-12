@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Emblema+One&display=swap");
+@import "@scss/variables.scss";
 nav {
   display: flex;
   align-items: center;
@@ -13,6 +14,7 @@ nav {
 
 nav h1 {
   margin-right: auto;
+  color: $primary-heading;
   font-family: "Emblema One", system-ui;
 }
 
