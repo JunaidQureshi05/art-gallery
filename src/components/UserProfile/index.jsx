@@ -3,7 +3,7 @@ import s from "./UserProfile.module.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { loginUser, logoutUser } from "../../store/reducers/authReducer";
 import { signInWithGoogle } from "../../firebase/firebaseAuth";
-import Alert from "../Alert/Alert";
+import Alert from "../Alert";
 const UserProfile = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const profile = useSelector((state) => state?.auth?.user);
