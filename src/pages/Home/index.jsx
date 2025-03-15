@@ -1,5 +1,5 @@
 import React from "react";
-import HomeSections from "../../components/HomeSections";
+import HomeSections from "@components/HomeSections";
 import s from "./Home.module.scss";
 
 const Home = () => {
