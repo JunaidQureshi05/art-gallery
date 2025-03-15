@@ -22,7 +22,7 @@ const UserProfile = () => {
           </div>
 
           <p className={s.name}>{profile?.displayName?.split(" ")?.[0]}</p>
-          <i class="fa-solid fa-arrow-right-from-bracket"></i>
+          <i className="fa-solid fa-arrow-right-from-bracket"></i>
         </div>
       ) : (
         <button
@@ -32,7 +32,7 @@ const UserProfile = () => {
             debugger;
             dispatch(loginUser(result));
           }}
-          className={s.signInButton}
+          className={s.loginWithGoogleBtn}
         >
           Sign In
         </button>

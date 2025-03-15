@@ -22,13 +22,20 @@ const Header = () => {
       <div className={s.buttons}>
         <ul className={s.navigation}>
           <li>
-            <Link to="/">Home</Link>
+            <Link to="/">
+              <i className="fa-solid fa-house"></i>
+            </Link>
           </li>
           <li>
-            <Link to="/cart"> Cart</Link>
+            <Link to="/cart">
+              <i className="fa-solid fa-cart-shopping"></i>
+            </Link>
           </li>
           <li>
-            <Link to="#"> Contact</Link>
+            <Link to="#">
+              {" "}
+              <i className="fa-solid fa-headset"></i>
+            </Link>
           </li>
         </ul>
         <UserProfile />
