@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { changeThemeAction } from "store/actions/config.actions";
+import { changeThemeAction } from "../actions/config.actions";
 
 let pastTheme = window.localStorage.getItem("theme");
 document.body.setAttribute("data-theme", pastTheme || "light");
