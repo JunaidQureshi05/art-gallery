@@ -29,7 +29,6 @@ const UserProfile = () => {
           onClick={async () => {
             const result = await signInWithGoogle();
 
-            debugger;
             dispatch(loginUser(result));
           }}
           className={s.loginWithGoogleBtn}

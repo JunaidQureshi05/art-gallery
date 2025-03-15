@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./Switch.css";
 import { useDispatch, useSelector } from "react-redux";
-import { changeTheme } from "store/reducers/configReducer";
+import { changeTheme } from "../../store/reducers/configReducer";
 const Switch = () => {
   const dispatch = useDispatch();
   const theme = useSelector((state) => state?.config?.theme);
