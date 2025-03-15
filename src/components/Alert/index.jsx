@@ -7,7 +7,7 @@ const Alert = ({ isOpen, message, onConfirm, onDeny }) => {
   return ReactDOM.createPortal(
     <div className={s.root}>
       <span className={s.crossButton} onClick={onDeny}>
-        <i class="fa-solid fa-xmark"></i>
+        <i className="fa-solid fa-xmark"></i>
       </span>
       <h1>{message}</h1>
       <div className={s.buttons}>

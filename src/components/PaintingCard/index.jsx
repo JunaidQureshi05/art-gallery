@@ -15,16 +15,16 @@ const PaintingCard = ({ painting }) => {
       <h3 className="title"> {painting.name}</h3>
       <p className="rating">
         {Array.from({ length: Math.floor(painting.rating) }).map((_, idx) => (
-          <i class="fa-solid fa-star"></i>
+          <i className="fa-solid fa-star" />
         ))}
         {Math.ceil(painting.rating) - painting.rating > 0 && (
-          <i class="fa-solid fa-star-half"></i>
+          <i className="fa-solid fa-star-half" />
         )}
       </p>
       <div className="pricing">
-        <div className="actual"> {formatCurrency(painting.price)}</div>
+        <div className="actual"> {formatCurrency(painting?.price)}</div>
         <div className="discounted">
-          {formatCurrency(painting.discountedPrice)}
+          {formatCurrency(painting?.discountedPrice)}
         </div>
       </div>
       <button className="addButton">Add to Cart</button>

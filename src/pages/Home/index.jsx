@@ -1,22 +1,20 @@
 import React from "react";
-import Header from "../../components/Header";
-
 import HomeSections from "../../components/HomeSections";
-import "./Home.css";
+import s from "./Home.module.scss";
 
 const Home = () => {
   return (
     <div>
-      <Header />
-      <div className="videoSection">
+      <div className={s.videoSection}>
         <video src="BG_VIDEO.mp4" autoPlay muted loop />
-        <div className="quote-container">
+        <div className={s.quoteContainer}>
           <blockquote>
             “Painting is just another way of keeping a diary.”
             <span>— Pablo Picasso</span>
           </blockquote>
         </div>
       </div>
+
       <HomeSections />
     </div>
   );

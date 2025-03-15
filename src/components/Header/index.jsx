@@ -1,14 +1,12 @@
 import React, { useEffect, useState } from "react";
 import Switch from "../Switch";
 import s from "./Header.module.scss";
-import { signInWithGoogle } from "../../firebase/firebaseAuth";
-import { useDispatch, useSelector } from "react-redux";
-import { loginUser } from "../../store/reducers/authReducer";
+
 import UserProfile from "../UserProfile";
 
 const Header = () => {
   const [scrolledPosition, setScrolledPosition] = useState(0);
-  function handleScroll(e) {
+  function handleScroll() {
     setScrolledPosition(window.scrollY);
   }
   useEffect(() => {
