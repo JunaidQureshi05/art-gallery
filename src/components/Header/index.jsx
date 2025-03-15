@@ -3,6 +3,7 @@ import Switch from "../Switch";
 import s from "./Header.module.scss";
 
 import UserProfile from "../UserProfile";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [scrolledPosition, setScrolledPosition] = useState(0);
@@ -21,13 +22,13 @@ const Header = () => {
       <div className={s.buttons}>
         <ul className={s.navigation}>
           <li>
-            <a href="#"> Home</a>
+            <Link to="/">Home</Link>
           </li>
           <li>
-            <a href="#"> About</a>
+            <Link to="/cart"> Cart</Link>
           </li>
           <li>
-            <a href="#"> Contact</a>
+            <Link to="#"> Contact</Link>
           </li>
         </ul>
         <UserProfile />
