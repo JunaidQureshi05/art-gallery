@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./HomeSections.css";
 import PaintingCard from "../PaintingCard";
 import { DUMMY_ART_SECTIONS } from "../../data";
+import { getCategories } from "services/fetchCategories";
 
 const HomeSections = () => {
   return (

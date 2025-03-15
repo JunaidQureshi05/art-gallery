@@ -1,8 +1,10 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Switch.css";
-import { ThemeContext } from "../../context/Theme";
+import { useDispatch, useSelector } from "react-redux";
+import { changeTheme } from "store/reducers/configReducer";
 const Switch = () => {
-  const { theme, setTheme } = useContext(ThemeContext);
+  const dispatch = useDispatch();
+  const theme = useSelector((state) => state?.config?.theme);
   const [isChecked, setIsChecked] = useState(false);
   useEffect(() => {
     setIsChecked(theme === "dark");
@@ -12,23 +14,23 @@ const Switch = () => {
     <div>
       <input
         type="checkbox"
-        class="checkbox"
+        className="checkbox"
         checked={isChecked}
         id="checkbox"
         style={{ display: "none" }}
-        onChange={(e) => {
-          setTheme(theme === "light" ? "dark" : "light");
+        onChange={() => {
+          dispatch(changeTheme());
         }}
       />
       <label
-        for="checkbox"
-        class={["checkbox-label", !isChecked ? "bg-light" : ""]
+        htmlFor="checkbox"
+        className={["checkbox-label", !isChecked ? "bg-light" : ""]
           .filter(Boolean)
           .join(" ")}
       >
-        <i class="fas fa-moon"></i>
-        <i class="fas fa-sun"></i>
-        <span class="ball"></span>
+        <i className="fas fa-moon"></i>
+        <i className="fas fa-sun"></i>
+        <span className="ball"></span>
       </label>
     </div>
   );

@@ -9,7 +9,6 @@ import UserProfile from "../UserProfile";
 const Header = () => {
   const [scrolledPosition, setScrolledPosition] = useState(0);
   function handleScroll(e) {
-    console.log("#####", window.scrollY);
     setScrolledPosition(window.scrollY);
   }
   useEffect(() => {

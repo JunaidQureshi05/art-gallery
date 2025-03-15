@@ -3,22 +3,21 @@ import { createSlice } from "@reduxjs/toolkit";
 let cachedProfile = JSON.parse(localStorage.getItem("user"));
 
 const authSlice = createSlice({
-  name: "auth",
+  name: "authentication",
   initialState: {
     user: cachedProfile || null,
   },
   reducers: {
     loginUser: (state, action) => {
-      debugger;
       state.user = action.payload;
-      global?.window?.localStorage.setItem(
+      window.localStorage.setItem(
         "user",
         JSON.stringify(Object.assign({}, action?.payload) || {})
       );
     },
-    logoutUser: (state, action) => {
+    logoutUser: (state) => {
       state.user = null;
-      global?.window?.localStorage?.removeItem("user");
+      window.localStorage?.removeItem("user");
     },
   },
 });

@@ -8,7 +8,6 @@ const UserProfile = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const profile = useSelector((state) => state?.auth?.user);
   const dispatch = useDispatch();
-  console.log("######PROFILE IS ", profile);
   return (
     <div>
       {profile ? (
@@ -29,7 +28,7 @@ const UserProfile = () => {
         <button
           onClick={async () => {
             const result = await signInWithGoogle();
-            console.log("######## I AM HERE", result);
+
             debugger;
             dispatch(loginUser(result));
           }}
