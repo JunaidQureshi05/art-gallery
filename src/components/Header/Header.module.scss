@@ -19,6 +19,10 @@ nav {
     margin-right: auto;
     color: $primary-heading;
     font-family: "Emblema One", system-ui;
+    a {
+      text-decoration: none;
+      color: $body-text;
+    }
   }
   .buttons {
     margin-top: 0;
