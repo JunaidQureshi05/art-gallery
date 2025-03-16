@@ -17,12 +17,6 @@
   font-size: 14px;
 }
 
-.rating {
-  color: var(--primary-highlight);
-  display: flex;
-  gap: 3px;
-  margin: 4px 0;
-}
 .pricing {
   display: flex;
   justify-content: space-between;
