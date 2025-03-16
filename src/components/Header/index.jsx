@@ -18,7 +18,9 @@ const Header = () => {
   }, []);
   return (
     <nav className={scrolledPosition > 0 ? s.blurredBg : null}>
-      <h1>Art Loom</h1>
+      <h1>
+        <Link to="/">Art Loom</Link>
+      </h1>
       <div className={s.buttons}>
         <ul className={s.navigation}>
           <li>

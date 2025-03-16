@@ -1,9 +1,16 @@
 import React from "react";
 import "./PaintingCard.css";
 import { formatCurrency } from "../../utils";
+import { useNavigate } from "react-router-dom";
 const PaintingCard = ({ painting }) => {
+  let navigate = useNavigate();
   return (
-    <div className="painting">
+    <div
+      className="painting"
+      onClick={() => {
+        navigate(`/products/${painting.id}`);
+      }}
+    >
       <div className="imageContaienr">
         <img
           src={painting.imageUrl}

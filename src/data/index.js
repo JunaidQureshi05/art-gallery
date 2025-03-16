@@ -10,6 +10,7 @@ export const DUMMY_ART_SECTIONS = [
           "https://images.pexels.com/photos/1070536/pexels-photo-1070536.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
         price: 7000,
         discountedPrice: 6500,
+        id: 1,
       },
       {
         name: "Broadway Boogie Woogie",
@@ -19,6 +20,7 @@ export const DUMMY_ART_SECTIONS = [
           "https://images.pexels.com/photos/1070536/pexels-photo-1070536.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
         price: 8000,
         discountedPrice: 7500,
+        id: 2,
       },
       {
         name: "Color Study: Squares",
@@ -28,6 +30,7 @@ export const DUMMY_ART_SECTIONS = [
           "https://images.pexels.com/photos/1070536/pexels-photo-1070536.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
         price: 6000,
         discountedPrice: 5500,
+        id: 3,
       },
     ],
   },
@@ -42,6 +45,7 @@ export const DUMMY_ART_SECTIONS = [
           "https://images.pexels.com/photos/1070536/pexels-photo-1070536.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
         price: 15000,
         discountedPrice: 14000,
+        id: 4,
       },
       {
         name: "Neon Dreams",
@@ -51,6 +55,7 @@ export const DUMMY_ART_SECTIONS = [
           "https://images.pexels.com/photos/1070536/pexels-photo-1070536.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
         price: 12000,
         discountedPrice: 11000,
+        id: 5,
       },
     ],
   },
@@ -65,6 +70,7 @@ export const DUMMY_ART_SECTIONS = [
           "https://images.pexels.com/photos/1070536/pexels-photo-1070536.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
         price: 5000,
         discountedPrice: 4500,
+        id: 6,
       },
     ],
   },
