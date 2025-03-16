@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import HomeSections from "@components/HomeSections";
 import s from "./Home.module.scss";
 
 const Home = () => {
+  const [isVideoLoaded, setIsVideoLoaded] = useState(false);
   return (
     <div>
       <div className={s.videoSection}>
@@ -11,13 +12,21 @@ const Home = () => {
           autoPlay
           muted
           loop
+          className={isVideoLoaded ? s.showVideo : s.hideVideo}
+          onLoadedData={() => {
+            setIsVideoLoaded(true);
+          }}
         />
-        <div className={s.quoteContainer}>
-          <blockquote>
-            “Painting is just another way of keeping a diary.”
-            <span>— Pablo Picasso</span>
-          </blockquote>
-        </div>
+        {!isVideoLoaded && <div className={s.videoLoader} />}
+
+        {isVideoLoaded && (
+          <div className={s.quoteContainer}>
+            <blockquote>
+              “Painting is just another way of keeping a diary.”
+              <span>— Pablo Picasso</span>
+            </blockquote>
+          </div>
+        )}
       </div>
 
       <HomeSections />
