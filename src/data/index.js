@@ -10,12 +10,16 @@ const DUMMY_PAINTINGS = [
     id: 1,
     reviews: [
       {
+        image:
+          "https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
         user: "Alice",
         rating: 5,
         comment: "Absolutely stunning piece! Looks amazing in my living room.",
       },
       {
         user: "Bob",
+        image:
+          "https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
         rating: 4,
         comment: "Good quality, but took a while to arrive.",
       },

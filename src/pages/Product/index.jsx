@@ -49,7 +49,14 @@ const ProductPage = () => {
           pageData.reviews.map((review, index) => (
             <div key={index} className={s.review}>
               <div className={s.reviewHeader}>
-                <strong>{review.user}</strong>
+                <div className={s.userInfo}>
+                  <img
+                    src={review.image}
+                    alt={review.user}
+                    className={s.userImage}
+                  />
+                  <strong>{review.user}</strong>
+                </div>
                 <Rating rating={review.rating} size={20} />
               </div>
               <p>{review.comment}</p>
