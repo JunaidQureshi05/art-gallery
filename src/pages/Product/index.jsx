@@ -14,7 +14,7 @@ const ProductPage = () => {
   }, [id]);
 
   if (!pageData) return <h2>Loading...</h2>;
-
+  console.log("page data", pageData);
   return (
     <div className={s.root}>
       <div className={s.imageContainer}>
@@ -38,6 +38,23 @@ const ProductPage = () => {
             Add to wishlist <i className="fa-regular fa-heart"></i>
           </button>
         </div>
+      </div>
+      {/* User Reviews Section */}
+      <div className={s.reviewsSection}>
+        <h2>User Reviews</h2>
+        {pageData?.reviews?.length > 0 ? (
+          pageData.reviews.map((review, index) => (
+            <div key={index} className={s.review}>
+              <div className={s.reviewHeader}>
+                <strong>{review.user}</strong>
+                <Rating rating={review.rating} size={20} />
+              </div>
+              <p>{review.comment}</p>
+            </div>
+          ))
+        ) : (
+          <p>No reviews yet. Be the first to review!</p>
+        )}
       </div>
     </div>
   );

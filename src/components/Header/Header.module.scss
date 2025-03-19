@@ -1,73 +1,74 @@
-@import url("https://fonts.googleapis.com/css2?family=Emblema+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap");
 @import "@scss/variables.scss";
 
 nav {
   display: flex;
   align-items: center;
-  padding: 16px 24px;
-  background-color: $body-background;
+  justify-content: space-between;
+  padding: 14px 32px;
   position: fixed;
-  width: 100%;
   top: 0;
   left: 0;
+  right: 0;
   z-index: 100;
   transition: all 0.4s ease;
-  backdrop-filter: blur(10px); // Smooth blur effect
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  // background: rgba(20, 20, 20, 0.3); // Dark glass effect
 
   &.blurredBg {
-    background-color: rgba($blurred-bg, 0.8);
+    // background: rgba(20, 20, 20, 0.7);
+    backdrop-filter: blur(12px);
   }
 
   h1 {
-    margin-right: auto;
-    color: $primary-heading;
-    font-family: "Emblema One", system-ui;
-    font-size: 26px;
+    font-size: 24px;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-family: "Poppins", sans-serif;
 
     a {
       text-decoration: none;
       color: $body-text;
       transition: color 0.3s ease;
       &:hover {
-        color: $primary-border;
+        color: #ff7b54;
       }
     }
   }
 
   .buttons {
     display: flex;
-    gap: 20px;
     align-items: center;
+    gap: 24px;
   }
 
   ul.navigation {
     display: flex;
     align-items: center;
-    gap: 16px;
+    gap: 24px;
     list-style: none;
-    font-size: 16px;
-    text-transform: uppercase;
 
     li a {
       text-decoration: none;
-      color: var(--body-text);
+      color: $body-text;
       font-size: 18px;
-      padding: 8px 12px;
-      transition: color 0.3s ease, border-bottom 0.3s ease;
+      padding: 10px;
+      transition: all 0.3s ease-in-out;
 
       &:hover {
-        color: $primary-border;
-        border-bottom: 2px solid $primary-border;
+        color: #ff7b54;
+        transform: translateY(-2px);
       }
     }
   }
 }
 
-// Responsive Design
+// Mobile Responsiveness
 @media (max-width: 768px) {
   nav {
     flex-direction: column;
-    padding: 12px;
+    padding: 10px;
     text-align: center;
   }
   .buttons {
@@ -75,7 +76,7 @@ nav {
     gap: 12px;
   }
   ul.navigation {
-    flex-direction: row;
-    font-size: 14px;
+    gap: 14px;
+    font-size: 16px;
   }
 }
