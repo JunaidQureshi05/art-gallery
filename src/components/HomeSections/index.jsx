@@ -1,7 +1,7 @@
 import React from "react";
 import "./HomeSections.css";
 import PaintingCard from "../PaintingCard";
-import { DUMMY_ART_SECTIONS } from "../../data";
+import DUMMY_ART_SECTIONS from "../../data";
 
 const HomeSections = () => {
   return (
