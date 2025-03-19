@@ -1,5 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faHouse,
+  faCartShopping,
+  faHeadset,
+} from "@fortawesome/free-solid-svg-icons";
 import Switch from "../Switch";
 import UserProfile from "../UserProfile";
 import s from "./Header.module.scss";
@@ -10,7 +16,7 @@ const Header = () => {
   useEffect(() => {
     const handleScroll = () => {
       console.log("scrollY", window.scrollY);
-      setScrolled(window.scrollY > 10 ? true : false);
+      setScrolled(window.scrollY > 10);
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
@@ -26,17 +32,17 @@ const Header = () => {
         <ul className={s.navigation}>
           <li>
             <Link to="/">
-              <i className="fa-solid fa-house" title="Home"></i>
+              <FontAwesomeIcon icon={faHouse} title="Home" />
             </Link>
           </li>
           <li>
             <Link to="/cart">
-              <i className="fa-solid fa-cart-shopping" title="Cart"></i>
+              <FontAwesomeIcon icon={faCartShopping} title="Cart" />
             </Link>
           </li>
           <li>
-            <Link to="#">
-              <i className="fa-solid fa-headset" title="Support"></i>
+            <Link to="/support">
+              <FontAwesomeIcon icon={faHeadset} title="Support" />
             </Link>
           </li>
         </ul>

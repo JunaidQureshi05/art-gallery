@@ -1,21 +1,38 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./HomeSections.css";
 import PaintingCard from "../PaintingCard";
-import DUMMY_ART_SECTIONS from "../../data";
+import DUMMY_PAINTINGS from "../../data";
+
+const CATEGORIES = [
+  "Abstract",
+  "Portrait",
+  "Landscape",
+  "Modern Art",
+  "Realism",
+];
 
 const HomeSections = () => {
   return (
-    <div>
-      {DUMMY_ART_SECTIONS.map((section, idx) => (
-        <div className="section" key={idx}>
-          <h1 className="sectionTitle">{section.title}</h1>
-          <div className="section-items">
-            {section.items.map((painting, idx) => (
-              <PaintingCard painting={painting} key={idx} />
-            ))}
+    <div className="home-sections">
+      {CATEGORIES.map((category, idx) => {
+        return (
+          <div className="section" key={idx}>
+            <div className="section-header">
+              <h1 className="sectionTitle">{category}</h1>
+              <Link to={`/category/${category}`} className="viewMore">
+                View More →
+              </Link>
+            </div>
+
+            <div className="section-items">
+              {DUMMY_PAINTINGS.slice(0, 5).map((painting) => (
+                <PaintingCard painting={painting} key={painting.id} />
+              ))}
+            </div>
           </div>
-        </div>
-      ))}
+        );
+      })}
     </div>
   );
 };

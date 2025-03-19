@@ -4,10 +4,14 @@ import { useDispatch, useSelector } from "react-redux";
 import { loginUser, logoutUser } from "../../store/reducers/authReducer";
 import { signInWithGoogle } from "../../firebase/firebaseAuth";
 import Alert from "../Alert";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowRightFromBracket } from "@fortawesome/free-solid-svg-icons";
+
 const UserProfile = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const profile = useSelector((state) => state?.auth?.user);
   const dispatch = useDispatch();
+
   return (
     <div>
       {profile ? (
@@ -18,17 +22,16 @@ const UserProfile = () => {
           }}
         >
           <div className={s.imageContainer}>
-            <img src={profile?.reloadUserInfo?.photoUrl} />
+            <img src={profile?.reloadUserInfo?.photoUrl} alt="Profile" />
           </div>
 
           <p className={s.name}>{profile?.displayName?.split(" ")?.[0]}</p>
-          <i className="fa-solid fa-arrow-right-from-bracket"></i>
+          <FontAwesomeIcon icon={faArrowRightFromBracket} />
         </div>
       ) : (
         <button
           onClick={async () => {
             const result = await signInWithGoogle();
-
             dispatch(loginUser(result));
           }}
           className={s.loginWithGoogleBtn}
@@ -37,7 +40,7 @@ const UserProfile = () => {
         </button>
       )}
       <Alert
-        message="Are you sure you want to logout ?"
+        message="Are you sure you want to logout?"
         isOpen={isModalOpen}
         onConfirm={() => {
           dispatch(logoutUser());

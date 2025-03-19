@@ -1,0 +1,98 @@
+@import "@scss/variables"; // Import global variables
+
+.container {
+  max-width: 800px;
+  margin: 100px auto auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+h1,
+h2 {
+  color: $brand-color;
+  margin-bottom: 10px;
+}
+
+/* Contact Section */
+.contactSection {
+  padding: 20px 0;
+  border-bottom: 1px solid #ddd;
+
+  .contactInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    margin-top: 20px;
+  }
+
+  .infoItem {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 16px;
+    color: #444;
+  }
+}
+
+.icon {
+  font-size: 20px;
+  //   color: $primary-highlight;
+}
+
+/* FAQ Section */
+.faqSection {
+  padding: 20px 0;
+  text-align: left;
+
+  h2 {
+    text-align: center;
+  }
+
+  .faqList {
+    margin-top: 15px;
+  }
+
+  .faqItem {
+    background: #f8f8f8;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    padding: 10px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+
+  .faqItem:hover {
+    background: #eee;
+  }
+
+  .faqQuestion {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+  }
+
+  .faqAnswer {
+    font-size: 14px;
+    color: #666;
+    margin-top: 8px;
+    padding-left: 10px;
+  }
+
+  .dropdownIcon {
+    font-size: 16px;
+    // color: $secondary-color;
+  }
+}
+
+/* Terms & Conditions */
+.termsSection {
+  font-size: 14px;
+  color: #555;
+}

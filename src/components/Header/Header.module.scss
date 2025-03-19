@@ -32,7 +32,7 @@ nav {
       color: $body-text;
       transition: color 0.3s ease;
       &:hover {
-        color: #ff7b54;
+        color: $brand-color;
       }
     }
   }

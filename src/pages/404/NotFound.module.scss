@@ -1,3 +1,4 @@
+@import "@scss/variables";
 .root {
   height: 100vh;
   display: flex;
@@ -14,7 +15,7 @@
     letter-spacing: 3px;
     text-transform: uppercase;
     font-weight: bold;
-    background: linear-gradient(90deg, #ff416c, #ff4b2b);
+    background: $brand-color;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
@@ -31,7 +32,7 @@
     font-size: 18px;
     font-weight: bold;
     color: #fff;
-    background: linear-gradient(45deg, #ff416c, #ff4b2b);
+    background: $brand-color;
     border: none;
     border-radius: 8px;
     cursor: pointer;

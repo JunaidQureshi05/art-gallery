@@ -5,6 +5,7 @@ import ProductPage from "@pages/Product";
 import Header from "@components/Header";
 import CartPage from "@pages/Cart";
 import NotFoundPage from "@pages/404";
+import ContactSupport from "@pages/Support";
 const App = () => {
   return (
     <div>
@@ -14,6 +15,7 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/products/:id" element={<ProductPage />} />
           <Route path="/cart" element={<CartPage />} />
+          <Route path="/support" element={<ContactSupport />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </BrowserRouter>

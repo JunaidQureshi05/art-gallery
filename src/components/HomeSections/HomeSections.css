@@ -1,22 +1,47 @@
-h1.sectionTitle {
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 5px;
-  font-size: 18px;
-  border-left: 5px solid var(--primary-border);
-  padding-left: 16px;
+.home-sections {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
 }
 
 .section {
-  padding: 0 16px;
+  padding: 20px;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin-bottom: 16px;
 }
 
+h1.sectionTitle {
+  font-weight: 600;
+  font-size: 24px;
+  text-transform: capitalize;
+}
+
+.viewMore {
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  color: #007bff;
+  transition: color 0.3s;
+}
+
+.viewMore:hover {
+  color: #0056b3;
+}
+
+/* Horizontal scrolling for cards */
 .section-items {
   display: flex;
   gap: 16px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+  scrollbar-width: none; /* Hide scrollbar for cleaner look */
 }
 
-.sectionTitle {
-  margin-bottom: 16px;
+.section-items::-webkit-scrollbar {
+  display: none;
 }
