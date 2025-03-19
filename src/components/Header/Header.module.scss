@@ -1,50 +1,81 @@
 @import url("https://fonts.googleapis.com/css2?family=Emblema+One&display=swap");
 @import "@scss/variables.scss";
+
 nav {
   display: flex;
   align-items: center;
-  padding: 16px;
+  padding: 16px 24px;
   background-color: $body-background;
   position: fixed;
-  z-index: 10;
+  width: 100%;
   top: 0;
   left: 0;
-  right: 0;
-  transition: all 0.5s ease;
+  z-index: 100;
+  transition: all 0.4s ease;
+  backdrop-filter: blur(10px); // Smooth blur effect
 
   &.blurredBg {
-    background-color: $blurred-bg;
+    background-color: rgba($blurred-bg, 0.8);
   }
+
   h1 {
     margin-right: auto;
     color: $primary-heading;
     font-family: "Emblema One", system-ui;
+    font-size: 26px;
+
     a {
       text-decoration: none;
       color: $body-text;
+      transition: color 0.3s ease;
+      &:hover {
+        color: $primary-border;
+      }
     }
   }
+
   .buttons {
-    margin-top: 0;
     display: flex;
-    gap: 18px;
+    gap: 20px;
     align-items: center;
   }
+
   ul.navigation {
     display: flex;
-    font-size: 14px;
-    text-transform: uppercase;
-    list-style-type: none;
     align-items: center;
-
     gap: 16px;
+    list-style: none;
+    font-size: 16px;
+    text-transform: uppercase;
+
     li a {
       text-decoration: none;
       color: var(--body-text);
       font-size: 18px;
+      padding: 8px 12px;
+      transition: color 0.3s ease, border-bottom 0.3s ease;
+
       &:hover {
-        border-bottom: 1px solid $primary-border;
+        color: $primary-border;
+        border-bottom: 2px solid $primary-border;
       }
     }
+  }
+}
+
+// Responsive Design
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    padding: 12px;
+    text-align: center;
+  }
+  .buttons {
+    flex-direction: column;
+    gap: 12px;
+  }
+  ul.navigation {
+    flex-direction: row;
+    font-size: 14px;
   }
 }

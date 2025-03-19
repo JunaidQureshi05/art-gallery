@@ -1,23 +1,23 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import Switch from "../Switch";
+import UserProfile from "../UserProfile";
 import s from "./Header.module.scss";
 
-import UserProfile from "../UserProfile";
-import { Link } from "react-router-dom";
-
 const Header = () => {
-  const [scrolledPosition, setScrolledPosition] = useState(0);
-  function handleScroll() {
-    setScrolledPosition(window.scrollY);
-  }
+  const [scrolled, setScrolled] = useState(false);
+
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return function () {
-      window.removeEventListener("scroll", handleScroll);
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
     };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
   return (
-    <nav className={scrolledPosition > 0 ? s.blurredBg : null}>
+    <nav className={scrolled ? s.blurredBg : ""}>
       <h1>
         <Link to="/">Art Loom</Link>
       </h1>
@@ -25,18 +25,17 @@ const Header = () => {
         <ul className={s.navigation}>
           <li>
             <Link to="/">
-              <i className="fa-solid fa-house"></i>
+              <i className="fa-solid fa-house" title="Home"></i>
             </Link>
           </li>
           <li>
             <Link to="/cart">
-              <i className="fa-solid fa-cart-shopping"></i>
+              <i className="fa-solid fa-cart-shopping" title="Cart"></i>
             </Link>
           </li>
           <li>
             <Link to="#">
-              {" "}
-              <i className="fa-solid fa-headset"></i>
+              <i className="fa-solid fa-headset" title="Support"></i>
             </Link>
           </li>
         </ul>

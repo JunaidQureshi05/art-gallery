@@ -8,6 +8,8 @@ const DUMMY_PAINTINGS = [
     price: 7000,
     discountedPrice: 6500,
     id: 1,
+    description:
+      "The painting captures a mesmerizing blend of colors and emotions, drawing the viewer into a world of serenity and mystery. Swirling brushstrokes create a dreamlike atmosphere, where soft hues of blue and gold dance together in perfect harmony. The artist masterfully plays with light and shadow, giving depth to the canvas and evoking a sense of nostalgia. Whether it’s a depiction of a quiet countryside at dawn or an abstract expression of human emotions, the artwork leaves room for interpretation, inviting the audience to lose themselves in its intricate details and hidden stories.",
   },
   {
     name: "Broadway Boogie Woogie",
