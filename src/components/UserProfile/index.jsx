@@ -5,28 +5,23 @@ import { loginUser, logoutUser } from "../../store/reducers/authReducer";
 import { signInWithGoogle } from "../../firebase/firebaseAuth";
 import Alert from "../Alert";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowRightFromBracket } from "@fortawesome/free-solid-svg-icons";
+import { faRightFromBracket } from "@fortawesome/free-solid-svg-icons";
 
 const UserProfile = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const profile = useSelector((state) => state?.auth?.user);
   const dispatch = useDispatch();
-
+  console.log("profile", profile);
   return (
-    <div>
+    <div className={s.container}>
       {profile ? (
-        <div
-          className={s.profile}
-          onClick={() => {
-            setIsModalOpen(true);
-          }}
-        >
+        <div className={s.profile} onClick={() => setIsModalOpen(true)}>
           <div className={s.imageContainer}>
             <img src={profile?.reloadUserInfo?.photoUrl} alt="Profile" />
           </div>
+          <div className={s.userName}> {profile?.displayName}</div>
 
-          <p className={s.name}>{profile?.displayName?.split(" ")?.[0]}</p>
-          <FontAwesomeIcon icon={faArrowRightFromBracket} />
+          <FontAwesomeIcon icon={faRightFromBracket} className={s.logoutIcon} />
         </div>
       ) : (
         <button
@@ -36,7 +31,7 @@ const UserProfile = () => {
           }}
           className={s.loginWithGoogleBtn}
         >
-          Sign In
+          Sign in with Google
         </button>
       )}
       <Alert
@@ -46,9 +41,7 @@ const UserProfile = () => {
           dispatch(logoutUser());
           setIsModalOpen(false);
         }}
-        onDeny={() => {
-          setIsModalOpen(false);
-        }}
+        onDeny={() => setIsModalOpen(false)}
       />
     </div>
   );
