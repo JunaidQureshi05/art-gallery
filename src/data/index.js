@@ -36,7 +36,24 @@ const DUMMY_PAINTINGS = [
     price: 8000,
     discountedPrice: 7500,
     id: 2,
-    description: "lorem",
+    reviews: [
+      {
+        image:
+          "https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        user: "Alice",
+        rating: 5,
+        comment: "Absolutely stunning piece! Looks amazing in my living room.",
+      },
+      {
+        user: "Bob",
+        image:
+          "https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        rating: 4,
+        comment: "Good quality, but took a while to arrive.",
+      },
+    ],
+    description:
+      "The painting captures a mesmerizing blend of colors and emotions, drawing the viewer into a world of serenity and mystery. Swirling brushstrokes create a dreamlike atmosphere, where soft hues of blue and gold dance together in perfect harmony. The artist masterfully plays with light and shadow, giving depth to the canvas and evoking a sense of nostalgia. Whether it’s a depiction of a quiet countryside at dawn or an abstract expression of human emotions, the artwork leaves room for interpretation, inviting the audience to lose themselves in its intricate details and hidden stories.",
   },
   {
     name: "Color Study: Squares",
@@ -47,6 +64,24 @@ const DUMMY_PAINTINGS = [
     price: 6000,
     discountedPrice: 5500,
     id: 3,
+    reviews: [
+      {
+        image:
+          "https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        user: "Alice",
+        rating: 5,
+        comment: "Absolutely stunning piece! Looks amazing in my living room.",
+      },
+      {
+        user: "Bob",
+        image:
+          "https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        rating: 4,
+        comment: "Good quality, but took a while to arrive.",
+      },
+    ],
+    description:
+      "The painting captures a mesmerizing blend of colors and emotions, drawing the viewer into a world of serenity and mystery. Swirling brushstrokes create a dreamlike atmosphere, where soft hues of blue and gold dance together in perfect harmony. The artist masterfully plays with light and shadow, giving depth to the canvas and evoking a sense of nostalgia. Whether it’s a depiction of a quiet countryside at dawn or an abstract expression of human emotions, the artwork leaves room for interpretation, inviting the audience to lose themselves in its intricate details and hidden stories.",
   },
   {
     name: "Cyberpunk City",
@@ -57,6 +92,24 @@ const DUMMY_PAINTINGS = [
     price: 15000,
     discountedPrice: 14000,
     id: 4,
+    reviews: [
+      {
+        image:
+          "https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        user: "Alice",
+        rating: 5,
+        comment: "Absolutely stunning piece! Looks amazing in my living room.",
+      },
+      {
+        user: "Bob",
+        image:
+          "https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        rating: 4,
+        comment: "Good quality, but took a while to arrive.",
+      },
+    ],
+    description:
+      "The painting captures a mesmerizing blend of colors and emotions, drawing the viewer into a world of serenity and mystery. Swirling brushstrokes create a dreamlike atmosphere, where soft hues of blue and gold dance together in perfect harmony. The artist masterfully plays with light and shadow, giving depth to the canvas and evoking a sense of nostalgia. Whether it’s a depiction of a quiet countryside at dawn or an abstract expression of human emotions, the artwork leaves room for interpretation, inviting the audience to lose themselves in its intricate details and hidden stories.",
   },
   {
     name: "Neon Dreams",
@@ -67,6 +120,24 @@ const DUMMY_PAINTINGS = [
     price: 12000,
     discountedPrice: 11000,
     id: 5,
+    reviews: [
+      {
+        image:
+          "https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        user: "Alice",
+        rating: 5,
+        comment: "Absolutely stunning piece! Looks amazing in my living room.",
+      },
+      {
+        user: "Bob",
+        image:
+          "https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        rating: 4,
+        comment: "Good quality, but took a while to arrive.",
+      },
+    ],
+    description:
+      "The painting captures a mesmerizing blend of colors and emotions, drawing the viewer into a world of serenity and mystery. Swirling brushstrokes create a dreamlike atmosphere, where soft hues of blue and gold dance together in perfect harmony. The artist masterfully plays with light and shadow, giving depth to the canvas and evoking a sense of nostalgia. Whether it’s a depiction of a quiet countryside at dawn or an abstract expression of human emotions, the artwork leaves room for interpretation, inviting the audience to lose themselves in its intricate details and hidden stories.",
   },
   {
     name: "Black Square",
@@ -76,6 +147,24 @@ const DUMMY_PAINTINGS = [
       "https://images.pexels.com/photos/1070536/pexels-photo-1070536.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     price: 5000,
     discountedPrice: 4500,
+    reviews: [
+      {
+        image:
+          "https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        user: "Alice",
+        rating: 5,
+        comment: "Absolutely stunning piece! Looks amazing in my living room.",
+      },
+      {
+        user: "Bob",
+        image:
+          "https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        rating: 4,
+        comment: "Good quality, but took a while to arrive.",
+      },
+    ],
+    description:
+      "The painting captures a mesmerizing blend of colors and emotions, drawing the viewer into a world of serenity and mystery. Swirling brushstrokes create a dreamlike atmosphere, where soft hues of blue and gold dance together in perfect harmony. The artist masterfully plays with light and shadow, giving depth to the canvas and evoking a sense of nostalgia. Whether it’s a depiction of a quiet countryside at dawn or an abstract expression of human emotions, the artwork leaves room for interpretation, inviting the audience to lose themselves in its intricate details and hidden stories.",
     id: 6,
   },
 ];

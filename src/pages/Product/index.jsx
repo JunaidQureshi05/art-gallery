@@ -6,11 +6,13 @@ import { useParams } from "react-router-dom";
 import data from "../../data";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartShopping, faHeart } from "@fortawesome/free-solid-svg-icons";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../../store/reducers/cartReducer";
 
 const ProductPage = () => {
   const [pageData, setPageData] = useState(null);
   const { id } = useParams();
-
+  const disptach = useDispatch();
   useEffect(() => {
     setPageData(data?.find((painting) => painting?.id === +id));
   }, [id]);
@@ -33,7 +35,11 @@ const ProductPage = () => {
       <div className={s.actions}>
         <span className={s.price}>{formatCurrency(pageData?.price)}</span>
         <div className={s.buttons}>
-          <button>
+          <button
+            onClick={() => {
+              disptach(addToCart(pageData?.id));
+            }}
+          >
             Add to Cart <FontAwesomeIcon icon={faCartShopping} />
           </button>
           <button className={s.wishListButton}>

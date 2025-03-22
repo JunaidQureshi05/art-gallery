@@ -2,26 +2,24 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import s from "./Cart.module.scss";
+import { useDispatch, useSelector } from "react-redux";
+import data from "../../data";
+import {
+  addToCart,
+  decreaseQty,
+  removeFromCart,
+} from "../../store/reducers/cartReducer";
 
 const CartPage = () => {
-  const cartItems = [
-    {
-      id: 1,
-      title: "Sunset Bliss",
-      price: 120,
-      quantity: 1,
-      image:
-        "https://images.pexels.com/photos/102127/pexels-photo-102127.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    },
-    {
-      id: 2,
-      title: "Ocean Waves",
-      price: 95,
-      quantity: 2,
-      image:
-        "https://images.pexels.com/photos/102127/pexels-photo-102127.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    },
-  ];
+  const cart = useSelector((state) => state?.cart);
+  const dispatch = useDispatch();
+  console.log("@@@@@", data);
+  let cartItems = cart.map((cItem) => {
+    let dataItem;
+    dataItem = data?.find((item) => item?.id === cItem?.id);
+    console.log("Junaid", dataItem);
+    return { ...dataItem, qty: cItem?.qty };
+  });
 
   return (
     <div className={s.root}>
@@ -30,17 +28,34 @@ const CartPage = () => {
         <div className={s.cartList}>
           {cartItems.map((item) => (
             <div key={item.id} className={s.cartItem}>
-              <img src={item.image} alt={item.title} className={s.image} />
+              <img src={item.imageUrl} alt={item.title} className={s.image} />
               <div className={s.details}>
-                <h2 className={s.name}>{item.title}</h2>
+                <h2 className={s.name}>{item.name}</h2>
                 <p className={s.price}>
-                  ${item.price} x {item.quantity}
+                  ${item.price} x {item.qty}
                 </p>
                 <div className={s.actions}>
-                  <button variant="outline">-</button>
-                  <span className={s.quantity}>{item.quantity}</span>
-                  <button variant="outline">+</button>
-                  <button variant="destructive" className={s.deleteButton}>
+                  <button
+                    onClick={() => {
+                      dispatch(decreaseQty(item?.id));
+                    }}
+                  >
+                    -
+                  </button>
+                  <span className={s.quantity}>{item.qty}</span>
+                  <button
+                    onClick={() => {
+                      dispatch(addToCart(item?.id));
+                    }}
+                  >
+                    +
+                  </button>
+                  <button
+                    className={s.deleteButton}
+                    onClick={() => {
+                      dispatch(removeFromCart(item?.id));
+                    }}
+                  >
                     <FontAwesomeIcon icon={faTrash} />
                   </button>
                 </div>
