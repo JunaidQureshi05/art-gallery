@@ -17,7 +17,7 @@ nav {
   // background: rgba(20, 20, 20, 0.3); // Dark glass effect
 
   &.blurredBg {
-    // background: rgba(20, 20, 20, 0.7);
+    background: rgba(20, 20, 20, 0.7);
     backdrop-filter: blur(12px);
   }
 
@@ -29,11 +29,8 @@ nav {
 
     a {
       text-decoration: none;
-      color: $body-text;
+      color: $brand-color;
       transition: color 0.3s ease;
-      &:hover {
-        color: $brand-color;
-      }
     }
   }
 
@@ -51,7 +48,7 @@ nav {
 
     li a {
       text-decoration: none;
-      color: $body-text;
+      color: $nav-link-color;
       font-size: 18px;
       padding: 10px;
       transition: all 0.3s ease-in-out;

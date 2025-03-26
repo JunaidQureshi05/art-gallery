@@ -16,6 +16,7 @@ $themes: (
     input-border: #ccc,
     blurred-bg: rgba(255, 255, 255, 0.5),
     brand-color: #ff7b54,
+    nav-link-color: white,
   ),
   dark: (
     body-background: black,
@@ -33,5 +34,6 @@ $themes: (
     input-border: #555,
     blurred-bg: rgba(0, 0, 0, 0.5),
     brand-color: #ff7b54,
+    nav-link-color: black,
   ),
 );
