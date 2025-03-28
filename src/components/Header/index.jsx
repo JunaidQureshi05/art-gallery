@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faHouse,
@@ -15,7 +15,6 @@ const Header = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      console.log("scrollY", window.scrollY);
       setScrolled(window.scrollY > 10);
     };
 
@@ -26,24 +25,35 @@ const Header = () => {
   return (
     <nav className={scrolled ? s.blurredBg : ""}>
       <h1>
-        <Link to="/">Art Loom</Link>
+        <NavLink to="/" className={s.logo}>
+          Art Loom
+        </NavLink>
       </h1>
       <div className={s.buttons}>
         <ul className={s.navigation}>
           <li>
-            <Link to="/">
+            <NavLink
+              to="/"
+              className={({ isActive }) => (isActive ? `${s.activeLink}` : "")}
+            >
               <FontAwesomeIcon icon={faHouse} title="Home" />
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link to="/cart">
+            <NavLink
+              to="/cart"
+              className={({ isActive }) => (isActive ? `${s.activeLink}` : "")}
+            >
               <FontAwesomeIcon icon={faCartShopping} title="Cart" />
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link to="/support">
+            <NavLink
+              to="/support"
+              className={({ isActive }) => (isActive ? `${s.activeLink}` : "")}
+            >
               <FontAwesomeIcon icon={faHeadset} title="Support" />
-            </Link>
+            </NavLink>
           </li>
         </ul>
         <UserProfile />

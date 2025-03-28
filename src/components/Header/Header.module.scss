@@ -12,12 +12,10 @@ nav {
   right: 0;
   z-index: 100;
   transition: all 0.4s ease;
-
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  // background: rgba(20, 20, 20, 0.3); // Dark glass effect
-
+  background: rgba(20, 20, 20, 0.3); // Dark glass effect
   &.blurredBg {
-    background: rgba(20, 20, 20, 0.7);
+    background: $blurred-bg;
     backdrop-filter: blur(12px);
   }
 
@@ -53,7 +51,7 @@ nav {
       padding: 10px;
       transition: all 0.3s ease-in-out;
 
-      &:hover {
+      &.activeLink {
         color: #ff7b54;
         transform: translateY(-2px);
       }

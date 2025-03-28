@@ -6,17 +6,25 @@ import Header from "@components/Header";
 import CartPage from "@pages/Cart";
 import NotFoundPage from "@pages/404";
 import ContactSupport from "@pages/Support";
+import s from "./App.module.scss";
+import MainLayout from "./layout/main";
 const App = () => {
+  console.log("Junaid", s);
   return (
-    <div>
+    <div className={s.root}>
       <BrowserRouter>
-        <Header />
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/products/:id" element={<ProductPage />} />
-          <Route path="/cart" element={<CartPage />} />
-          <Route path="/support" element={<ContactSupport />} />
-          <Route path="*" element={<NotFoundPage />} />
+          <Route path="/" element={<MainLayout />}>
+            <Route path="/" element={<Home />} />
+            <Route path="/products/:id" element={<ProductPage />} />
+            <Route path="/cart" element={<CartPage />} />
+            <Route path="/support" element={<ContactSupport />} />
+            <Route
+              path="/category/:categoryName"
+              element={<div>Hello there</div>}
+            />
+            <Route path="*" element={<NotFoundPage />} />
+          </Route>
         </Routes>
       </BrowserRouter>
     </div>
